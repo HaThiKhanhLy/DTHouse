@@ -28,7 +28,7 @@ public class DataWarehouse {
             String insertDateDimQuery = "INSERT INTO date_dim (Year, Month, day_of_month, day_name, Hour, Minute, Period) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement dateDimStatement = dataWarehouseConnection.prepareStatement(insertDateDimQuery, Statement.RETURN_GENERATED_KEYS);
 
-            String insertNewsQuery = "INSERT INTO news (Title, Datetime_ID, LinkSource, Event, Source, Content, LinkImage) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String insertNewsQuery = "INSERT INTO news (Title, Datetime_ID, LinkSource, Event, Source, Content, LinkImage,Date_news) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
             PreparedStatement newsStatement = dataWarehouseConnection.prepareStatement(insertNewsQuery, Statement.RETURN_GENERATED_KEYS);
 
             String insertNewstopicQuery = "INSERT INTO Newstopic (newID, Topic_ID, create_by, update_by) VALUES (?, ?, ?, ?)";
@@ -94,6 +94,8 @@ public class DataWarehouse {
                     String Source = controlResultSet.getString("Source");
                     String Content = controlResultSet.getString("Content");
                     String LinkImage = controlResultSet.getString("ImageURL");
+                    String date_news = controlResultSet.getString("DateTime");
+
 
                     // Thực hiện insert vào bảng news
                     newsStatement.setString(1, Title);
@@ -103,6 +105,7 @@ public class DataWarehouse {
                     newsStatement.setString(5, Source);
                     newsStatement.setString(6, Content);
                     newsStatement.setString(7, LinkImage);
+                    newsStatement.setString(8, date_news);
                     newsStatement.executeUpdate();
 
 // Lấy ID của news vừa mới insert
