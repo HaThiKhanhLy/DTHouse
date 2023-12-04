@@ -18,7 +18,7 @@ public class DataMart {
                     "    n.ID AS newsId,\n" +
                     "    td.Name AS topic,\n" +
                     "    n.LinkImage AS imageUrl,\n" +
-                    "    CONCAT_WS('-', dd.Year, LPAD(dd.Month, 2, '0'), LPAD(dd.day_of_month, 2, '0')) AS datePost,\n" +
+                    "    n.Date_news AS datePost,\n" +
                     "    n.Event AS event,\n" +
                     "    n.Title AS title,\n" +
                     "    n.Content AS content,\n" +
@@ -55,7 +55,7 @@ public class DataMart {
                         PreparedStatement dataMartStatement = dataMartConnection.prepareStatement(updateNewsQuery);
                         dataMartStatement.setString(1,  DWResultSet.getString("topic"));
                         dataMartStatement.setString(2,  DWResultSet.getString("imageUrl"));
-                        dataMartStatement.setString(3,  DWResultSet.getString("datePost"));
+                        dataMartStatement.setString(3,  DWResultSet.getString("Date_news"));
                         dataMartStatement.setString(4,  DWResultSet.getString("event"));
                         dataMartStatement.setString(5,  DWResultSet.getString("title"));
                         dataMartStatement.setString(6,  DWResultSet.getString("content"));
@@ -73,7 +73,7 @@ public class DataMart {
                         dataMartStatement.setInt(1, Integer.parseInt(DWResultSet.getString("newsId")));
                         dataMartStatement.setString(2,  DWResultSet.getString("topic"));
                         dataMartStatement.setString(3,  DWResultSet.getString("imageUrl"));
-                        dataMartStatement.setString(4,  DWResultSet.getString("datePost"));
+                        dataMartStatement.setString(4,  DWResultSet.getString("Date_news"));
                         dataMartStatement.setString(5,  DWResultSet.getString("event"));
                         dataMartStatement.setString(6,  DWResultSet.getString("title"));
                         dataMartStatement.setString(7,  DWResultSet.getString("content"));
