@@ -24,6 +24,9 @@ public class Main {
             // 3: Loading dữ liệu từ control vào bảng datawarehouse
             DataWarehouse.LoadDataWarehouse();
 
+            // 4: Loading datawarehouse vao datamart
+            DataMart.LoadDataMart();
+
             System.out.println("Công việc đã hoàn thành.");
         } catch (Exception e) {
             e.printStackTrace();

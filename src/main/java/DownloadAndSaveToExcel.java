@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DownloadAndSaveToExcel {
-    public static void downloadAndSave() {
+    public static void  downloadAndSave() {
         try {
             // Đường dẫn đến thư mục chứa tệp Excel
             String excelFolderPath = "D://DataWarehouse/";
