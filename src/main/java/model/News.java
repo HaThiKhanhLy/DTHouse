@@ -13,6 +13,19 @@ public class News {
     private String content;
     private String imageUrl;
 
+    public News(int id, String title, String dateTime, String linkSource, String event, String source, String topic, String content, String imageUrl) {
+        this.id = id;
+        this.title = title;
+        this.dateTime = dateTime;
+        this.linkSource = linkSource;
+        this.event = event;
+        this.source = source;
+        this.topic = topic;
+        this.content = content;
+        this.imageUrl = imageUrl;
+    }
+
+
     public int getId() {
         return id;
     }
