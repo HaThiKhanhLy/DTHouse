@@ -5,7 +5,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.time.LocalDate" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!doctype html>
 
 <html lang="en">
@@ -54,10 +54,10 @@
             <div style="font-weight: bold; font-size: 20px; margin: 16px auto;">
 
             </div>
-            <div>
-            </div>
+<%--            <div>--%>
+<%--            </div>--%>
 				<span style="padding-right: 12px">
-					<img style="margin-bottom: -4px" width="20" height="20" src=<%=newsList.get(i).getImageUrl()%>/>
+					<img style="margin-bottom: -4px" width="20" height="20" src= "<%=newsList.get(i).getImageUrl()%>" alt = "Hình ảnh bài viết"/>
 				</span>
                 <span>
 					<%=newsList.get(i).getDateTime()%>>
