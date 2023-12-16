@@ -1,3 +1,6 @@
+import Service.LoadDataNewsToWeb;
+import controller.LoadDataNews;
+import model.News;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jsoup.HttpStatusException;
@@ -26,7 +29,7 @@ public class Main {
 
             // 4: Loading datawarehouse vao datamart
             DataMart.LoadDataMart();
-
+            //5. Loading datamart to list danh sách bài viết
             System.out.println("Công việc đã hoàn thành.");
         } catch (Exception e) {
             e.printStackTrace();
